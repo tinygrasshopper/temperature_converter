@@ -3,4 +3,6 @@
     <%= select_tag(:from, options_for_select(@available_units, params[:from])) %>
     <%= select_tag(:to, options_for_select(@available_units, params[:from])) %>
     <%= submit_tag('convert') %>
+
+    <div class='result'><%= @result.value if @result.present? %></div>
 <% end %>

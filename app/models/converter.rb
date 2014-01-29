@@ -3,4 +3,13 @@ class Converter
     return ['celcius', 'fahrenheit']
   end
 
+  def self.convert measurement, from, to
+    unit = to_class(from).new(measurement)
+    to_class(to).convert(unit)
+  end
+
+  private
+  def self.to_class(from)
+    from.capitalize.constantize
+  end
 end

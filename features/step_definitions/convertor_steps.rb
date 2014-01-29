@@ -10,5 +10,5 @@ When(/^I convert the temperature to (celcius|fahrenheit)$/) do |type|
   click_button 'convert'
 end
 Then(/^I should see the converted result as (\d.+)/) do |degrees|
-  expect(find('.result')).to be(degrees)
+  expect(find('.result').text).to eq(degrees)
 end

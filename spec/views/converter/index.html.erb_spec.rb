@@ -9,4 +9,13 @@ describe 'converter/index.html.erb' do
     expect(rendered).to match /celcius/
     expect(rendered).to match /fahrenheit/
   end
+
+  it 'should render the result' do
+    assign(:available_units, [])
+    assign(:result, double('unit', value: 200.01))
+
+    render
+
+    expect(rendered).to match /200.01/
+  end
 end
