@@ -1,0 +1,6 @@
+<%= form_tag('/', method: 'get') do %>
+    <%= text_field_tag(:measurement, params[:measurement]) %>
+    <%= select_tag(:from, options_for_select(@available_units, params[:from])) %>
+    <%= select_tag(:to, options_for_select(@available_units, params[:from])) %>
+    <%= submit_tag('convert') %>
+<% end %>
