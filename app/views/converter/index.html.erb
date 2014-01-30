@@ -1,8 +1,17 @@
-<%= form_tag('/', method: 'get') do %>
-    <%= text_field_tag(:measurement, params[:measurement]) %>
-    <%= select_tag(:from, options_for_select(@available_units, params[:from])) %>
-    <%= select_tag(:to, options_for_select(@available_units, params[:to])) %>
-    <%= submit_tag('convert') %>
+<%= form_tag('/', method: 'get', role: 'form', class: 'form-horizontal col-md-6 col-md-offset-3"') do %>
+    <h1>Converter</h1>
+    <div class="form-group">
+      <%= text_field_tag(:measurement, params[:measurement], class: 'form-control') %>
+    </div>
 
-    <div class='result'><%= @result.value if @result.present? %></div>
+    <div class="form-group">
+      <%= select_tag(:from, options_for_select(@available_units, params[:from]), class: 'form-control') %>
+    </div>
+    <div class="form-group">
+      <%= select_tag(:to, options_for_select(@available_units, params[:to]), class: 'form-control') %>
+    </div>
+    <div class="form-group">
+      <%= submit_tag('convert', class: 'form-control') %>
+    </div>
+    <h3 class='result'><%= @result.value if @result.present? %></h3>
 <% end %>
