@@ -9,7 +9,7 @@ class Converter
   end
 
   private
-  def self.to_class(from)
-    from.capitalize.constantize
+  def self.to_class(unit)
+    unit.capitalize.constantize
   end
 end
